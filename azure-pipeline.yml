@@ -1,0 +1,51 @@
+trigger:
+  - none
+
+pool:
+  vmImage: windows-latest
+
+resources:
+  repositories:
+    - repository: RepoEmiAutomatizacion
+      type: git
+      ref: master
+#      name: ContratoDigital/_git/digitalcontract-automatizedtests-qa
+
+stages:
+  - stage: escenarios_generar_contrato
+    displayName: Escenarios Contrato Digital
+    jobs:
+      - job: ejecutar_escenarios_contrato_digital
+        displayName: Ejecucion Escenarios Contrato Digital
+        steps:
+          - checkout: RepoEmiAutomatizacion
+          - task: JavaToolInstaller@0
+            displayName: 'install java'
+            inputs:
+              versionSpec: 17
+              jdkArchitectureOption: x64
+              jdkSourceOption: PreInstalled
+          - task: CmdLine@2
+            displayName: Limpiar Reporte
+            inputs:
+              script: |
+                mvn clean
+          - task: CmdLine@2
+            displayName: Ejecucion Escenarios
+            inputs:
+              script: |
+                mvn clean verify -Denvironment=qa
+          - task: CopyFiles@2
+            displayName: copyTargetFolder
+            condition: always()
+            inputs:
+              SourceFolder: '$(System.DefaultWorkingDirectory)/target/site/serenity'
+              Contents: '**'
+              TargetFolder: '$(build.artifactstagingdirectory)'
+          - task: PublishBuildArtifacts@1
+            displayName: publishSerenityReport
+            condition: always()
+            inputs:
+              PathtoPublish: '$(System.DefaultWorkingDirectory)/target/site/serenity'
+              ArtifactName: 'Informe Ejecución seguridad'
+              publishLocation: 'Container'
