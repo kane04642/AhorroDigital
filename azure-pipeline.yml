@@ -4,13 +4,6 @@ trigger:
 pool:
   vmImage: windows-latest
 
-resources:
-  repositories:
-    - repository: RepoEmiAutomatizacionSOCloud
-      type: git
-      ref: develop
-      name: SOCloud/_git/SOCloud.Automatizacion.Web
-
 stages:
   - stage: escenarios_socloud
     displayName: Escenarios SOCloud
@@ -18,7 +11,6 @@ stages:
       - job: ejecutar_escenarios
         displayName: Ejecucion Escenarios
         steps:
-          - checkout: RepoEmiAutomatizacion
           - task: JavaToolInstaller@0
             displayName: 'install java'
             inputs:
