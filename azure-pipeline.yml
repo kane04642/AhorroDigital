@@ -34,6 +34,30 @@ stages:
 #            inputs:
 #  #             script: |
 #  #                gradle test --tests "com.grupoemi.runners.RerunFailedScenarios"
+
+                # Tarea para publicar los resultados de cobertura (para la pestaña "Code Coverage" en Azure DevOps)
+          - task: PublishCodeCoverageResults@1
+            displayName: 'Publicar Reporte de Cobertura de Código'
+            inputs:
+              codeCoverageTool: JaCoCo # Especifica la herramienta de cobertura
+              # Ruta al archivo XML generado por JaCoCo (necesario para que Azure DevOps lea las métricas)
+              # La ruta por defecto de JaCoCo es build/reports/jacoco/test/jacocoTestReport.xml
+              summaryFileLocation: '$(System.DefaultWorkingDirectory)/build/reports/jacoco/test/jacocoTestReport.xml'
+              # Opcional: Ruta a la carpeta del reporte HTML (Azure DevOps puede enlazar a ella)
+              reportDirectory: '$(System.DefaultWorkingDirectory)/build/reports/jacoco/test/html'
+              # Opcional: Patrón para encontrar archivos fuente (para mostrar el código con cobertura)
+              # sourceFileLocation: '$(System.DefaultWorkingDirectory)/src/main/java' # Ajusta según tu estructura de proyecto
+
+                # Tarea para publicar el reporte HTML de JaCoCo como un artefacto de la build
+          - task: PublishBuildArtifacts@1
+            displayName: 'Publicar Reporte HTML de Cobertura (JaCoCo)'
+            condition: always() # Publicar siempre el reporte HTML, incluso si las pruebas fallan
+            inputs:
+              # Ruta a la carpeta del reporte HTML generado por JaCoCo
+              PathtoPublish: '$(System.DefaultWorkingDirectory)/build/reports/jacoco/test/html'
+              ArtifactName: 'Informe Cobertura Código' # Nombre del artefacto en Azure DevOps
+              publishLocation: 'Container' # Publicar en el contenedor de artefactos de la build
+
           - task: CopyFiles@2
             displayName: copyTargetFolder
             condition: always()
