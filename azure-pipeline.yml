@@ -49,7 +49,7 @@ stages:
               # sourceFileLocation: '$(System.DefaultWorkingDirectory)/src/main/java' # Ajusta según tu estructura de proyecto
 
                 # Tarea para publicar el reporte HTML de JaCoCo como un artefacto de la build
-          - task: PublishBuildArtifacts@2
+          - task: PublishBuildArtifacts@1
             displayName: 'Publicar Reporte HTML de Cobertura (JaCoCo)'
             condition: always() # Publicar siempre el reporte HTML, incluso si las pruebas fallan
             inputs:
