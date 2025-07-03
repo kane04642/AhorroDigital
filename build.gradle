@@ -22,6 +22,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'org.sonarqube' version '3.3'
+    id 'jacoco'
 }
 
 repositories {
@@ -35,9 +36,10 @@ repositories {
 
 
 ext{
-    serenityVersion = '4.1.20'
+    serenityVersion = '4.2.34'
     slf4jVersion = '2.0.13'
     junitVersion = '5.10.3'
+    jacocoToolVersion = '0.8.11'
 }
 
 dependencies {
@@ -61,18 +63,34 @@ group = 'com.grupoemi.seguridad'
 version = '1.0-SNAPSHOT'
 description = 'Seguridad'
 java.sourceCompatibility = JavaVersion.VERSION_17
+java.targetCompatibility = JavaVersion.VERSION_17
 
 
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
+// Configuración de JaCoCo
+jacoco { // <--- AÑADIR ESTE BLOQUE para configurar JaCoCo
+    toolVersion = "${jacocoToolVersion}" // Usar la versión definida en ext
+    reportsDirectory = layout.buildDirectory.dir('reports/jacoco') // Directorio base para reportes
+}
 
 test {
     testLogging.showStandardStreams = true
     systemProperties System.getProperties()
     systemProperty "cucumber.options", System.getProperty("cucumber.options")
+    finalizedBy jacocoTestReport
 }
 
+jacocoTestReport { // <--- AÑADIR ESTE BLOQUE para configurar el reporte de JaCoCo
+    dependsOn test // Asegura que las pruebas se ejecuten antes de generar el reporte
+
+    reports {
+        xml.required = true // Genera el reporte XML (necesario para Azure DevOps y SonarQube)
+        html.required = true // Genera el reporte HTML (para visualización)
+        csv.required = false // No genera el reporte CSV
+    }
+}
 gradle.startParameter.continueOnFailure = true
 
 test.finalizedBy(aggregate)
