@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        tags = "@LoginSO",
+        tags = "@Crearservicio",
         features = "src/test/resources/features",
         glue = "com.grupoemi.socloud"
 )
