@@ -1,8 +1,9 @@
-package com.calidda.ov.stepdefinitions;
+package com.calidda.planQ.stepdefinitions;
 
-import com.calidda.ov.questions.HomePageVisible;
-import com.calidda.ov.tasks.AutenticarOV;
-import com.calidda.ov.tasks.LoginOV;
+
+import com.calidda.planQ.questions.HomePageVisible;
+import com.calidda.planQ.tasks.AutenticarOV;
+import com.calidda.planQ.tasks.LoginPQ;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
@@ -16,7 +17,7 @@ public class LoginSOStepdefinitions {
     public void el_usuario_navega_a_la_pagina_autenticador() {
 
         theActorInTheSpotlight().wasAbleTo(
-                LoginOV.cloud()
+                LoginPQ.cloud()
         );
     }
 

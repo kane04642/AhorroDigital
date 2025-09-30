@@ -2,7 +2,7 @@
 
 Característica: : Login en oficina virtual
 
-  @Login
+  @Login @regresion
   Esquema del escenario: : Login Exitoso
     Dado el usuario navega a la pagina autenticador
     Cuando el usuario ingresa las credenciales para autenticacion "<actor>"

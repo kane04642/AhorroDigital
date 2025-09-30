@@ -1,4 +1,4 @@
-package com.calidda.ov.tasks;
+package com.calidda.planQ.tasks;
 
 import net.serenitybdd.model.environment.EnvironmentSpecificConfiguration;
 import net.serenitybdd.screenplay.Actor;
@@ -8,13 +8,13 @@ import net.thucydides.model.util.EnvironmentVariables;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class LoginOV implements Task {
+public class LoginPQ implements Task {
 
     private EnvironmentVariables environmentVariables;
     String urlBase;
 
-    public static LoginOV cloud(){
-        return instrumented(LoginOV.class);
+    public static LoginPQ cloud(){
+        return instrumented(LoginPQ.class);
     }
     @Override
     public <T extends Actor> void performAs(T actor) {

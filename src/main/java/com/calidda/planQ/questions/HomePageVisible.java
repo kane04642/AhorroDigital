@@ -1,4 +1,4 @@
-package com.calidda.ov.questions;
+package com.calidda.planQ.questions;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
