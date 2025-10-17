@@ -13,16 +13,16 @@ import static com.calidda.planQ.userinterface.Login.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
-public class AutenticarOV implements Task {
+public class AutenticarPQ implements Task {
 
     private final String actorName;
     private EnvironmentVariables environmentVariables;
-    public AutenticarOV(String actorName) {
+    public AutenticarPQ(String actorName) {
         this.actorName = actorName;
     }
 
-    public static AutenticarOV cloud(String actorName){
-        return instrumented(AutenticarOV.class, actorName);
+    public static AutenticarPQ cloud(String actorName){
+        return instrumented(AutenticarPQ.class, actorName);
     }
 
     @Override
@@ -36,16 +36,9 @@ public class AutenticarOV implements Task {
                 .getProperty(passwordKey);
 
         actor.attemptsTo(
-                WaitUntil.the(BTN_COOKIES, isPresent()).forNoMoreThan(15).seconds(),
-                Click.on(BTN_COOKIES),
                 Enter.keyValues(username).into(TXT_USER),
                 Enter.keyValues(password).into(TXT_CLAVE),
-                Click.on(BTN_INICIAR_SESION)/*,
-                WaitUntil.the(BTN_ACTUALIZAR, isPresent()).forNoMoreThan(40).seconds(),
-                Click.on(BTN_ACTUALIZAR),
-                Scroll.to(TXT_NUMERO),
-                Enter.keyValues("123134").into(TXT_NUMERO)
-                */
+                Click.on(BTN_INGRESAR)
                 );
         Serenity.takeScreenshot();
 
