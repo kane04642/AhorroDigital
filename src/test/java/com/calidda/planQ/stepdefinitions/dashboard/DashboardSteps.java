@@ -72,4 +72,32 @@ public class DashboardSteps {
                 Datos_DashCD.dashboard(datosDashCD)
         );
     }
+
+    @Cuando("el usuario ingresa datos plan anual de consulta Construcciòn - Distrito")
+    public void elUsuarioIngresaDatosPlanAnualDeConsultaConstruccionDistrito(Map<String, String> planAnualCD) {
+        theActorInTheSpotlight().wasAbleTo(
+                PlanAnualCD.datos(planAnualCD)
+        );
+    }
+
+    @Y("el usuario selecciona pestaña Habilitación - Periodo")
+    public void elUsuarioSeleccionaPestanaHabilitacionPeriodo() {
+        theActorInTheSpotlight().wasAbleTo(
+                Pestana_HabiliPeriodo.clikc()
+        );
+    }
+
+    @Cuando("el usuario ingresa datos de consulta Habilitación - Periodo")
+    public void elUsuarioIngresaDatosDeConsultaHabilitacionPeriodo(Map<String, String> datosQuinqueHAP) {
+        theActorInTheSpotlight().wasAbleTo(
+                Datos_QuinquenalHAP.datos(datosQuinqueHAP)
+        );
+    }
+
+    @Cuando("el usuario ingresa datos de consulta plan anual Habilitación - Periodo")
+    public void elUsuarioIngresaDatosDeConsultaPlanAnualHabilitacionPeriodo(Map<String, String> datosAnualHAP) {
+        theActorInTheSpotlight().wasAbleTo(
+                Datos_AnualHAP.diligenciar(datosAnualHAP)
+        );
+    }
 }

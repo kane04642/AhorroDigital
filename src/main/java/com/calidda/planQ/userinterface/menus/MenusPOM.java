@@ -50,5 +50,26 @@ public class MenusPOM extends PageObject {
             .located(By.cssSelector("body > app-root:nth-child(1) > app-dashboard:nth-child(3) > section:nth-child(1) > section:nth-child(3) > div:nth-child(3) > app-card:nth-child(1) > section:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > app-input-select:nth-child(4) > div:nth-child(1) > select:nth-child(2)"));
     public static final Target BTN_APLICAR_CD = Target.the("Dar click en botòn aplicar en pestaña Avance Construcción / Distrito")
             .located(By.xpath("(//div[@class='flex justify-center mt-1 w-full'])[2]"));
+    public static final Target LIS_MATE_CD = Target.the("Seleccionar material")
+            .located(By.xpath("//div[2]//app-card[1]//section[1]//div[1]//div[1]//div[1]//app-input-select[3]//div[1]//select[1]"));
+    public static final Target LNK_HABILI_PERIODO = Target.the("Click en sub-menù Avance Habilitación / Periodo")
+            .located(By.xpath("//a[contains(text(), 'Avance Habilitación / Periodo')]"));
+    public static final Target LIS_PLAN_HAP = Target.the("Dar click en lista de plan en Avance Habilitación / Periodo")
+            .located(By.xpath("//div[3]//app-card[1]//section[1]//div[1]//div[1]//div[1]//app-input-select[1]//div[1]//select[1]"));
+
+    public static final Target LIS_PERIODO_HAP = Target.the("Dar click en lista de periodo en Avance Habilitación / Periodo")
+            .located(By.cssSelector("app-input-select[inputtitle='Periodo PQ'] select[class='outline-none bg-gray-50 border-[1.2px] text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5']"));
+    public static final Target TXT_APQ_HAP= Target.the("Ingresar año PQ en Avance Habilitación / Periodo")
+            .located(By.xpath("//input[@placeholder='Ingresar Año PQ']"));
+    public static final Target LIS_MATERIAL_HAP = Target.the("Dar click en lista de material en Avance Habilitación / Periodo")
+            .located(By.xpath("//body[1]/app-root[1]/app-dashboard[1]/section[1]/section[1]/div[3]/app-card[1]/section[1]/div[1]/div[1]/div[1]/app-input-select[3]/div[1]/select[1]"));
+    public static final Target LIS_CATEGORIA_HAP = Target.the("Dar click en lista de material en Avance Habilitación / Periodo")
+            .located(By.cssSelector("app-input-select[inputtitle='Categoria'] select[class='outline-none bg-gray-50 border-[1.2px] text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5']"));
+    public static final Target BTN_APLICAR_HAP = Target.the("Dar click en botòn aplicar en pestaña Avance Construcción / Periodo")
+            .located(By.xpath("(//*[name()='svg'][@class='w-8 h-8 text-white'])[3]"));
+    public static final Target LIS_PA_HAP = Target.the("Dar click en lista de PA en Avance Habilitación / Periodo")
+            .located(By.cssSelector("app-input-select[inputtitle='PA'] select[class='outline-none bg-gray-50 border-[1.2px] text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5']"));
+
+
 
 }

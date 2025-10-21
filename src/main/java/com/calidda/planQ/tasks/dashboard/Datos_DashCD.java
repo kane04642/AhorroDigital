@@ -26,7 +26,7 @@ public class Datos_DashCD implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(LIS_PLAN_CD),
+
                 SelectFromOptions.byVisibleText(datosDashCD.get("plan")).from(LIS_PLAN_CD),
                 Click.on(LIS_PERIODO_PQ),
                 Click.on(SLC_PERIODO_PQ.of(datosDashCD.get("periodoPQ"))),
