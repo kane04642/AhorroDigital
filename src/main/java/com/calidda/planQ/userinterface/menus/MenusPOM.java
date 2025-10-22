@@ -70,6 +70,40 @@ public class MenusPOM extends PageObject {
     public static final Target LIS_PA_HAP = Target.the("Dar click en lista de PA en Avance Habilitación / Periodo")
             .located(By.cssSelector("app-input-select[inputtitle='PA'] select[class='outline-none bg-gray-50 border-[1.2px] text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5']"));
 
+    public static final Target LNK_CONSTRU_PERIODO = Target.the("Click en sub-menù Avance construcciòn / Periodo")
+            .located(By.xpath("//a[contains(text(), 'Avance Construcción / Periodo')]"));
+    public static final Target LIS_PLAN_CP = Target.the("Dar click en lista de plan en Avance Construciòn / Periodo")
+            .located(By.xpath("//div[4]//app-card[1]//section[1]//div[1]//div[1]//div[1]//app-input-select[1]//div[1]//select[1]"));
+    public static final Target LIS_PA_CP = Target.the("Dar click en lista de PA en Avance Construciòn / Periodo")
+            .located(By.cssSelector("body > app-root:nth-child(1) > app-dashboard:nth-child(3) > section:nth-child(1) > section:nth-child(3) > div:nth-child(5) > app-card:nth-child(1) > section:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > app-input-select:nth-child(2) > div:nth-child(1) > select:nth-child(2)"));
+    public static final Target LIS_MATERIAL_CP = Target.the("Dar click en lista de material en Avance Construciòn / Periodo")
+            .located(By.cssSelector("body > app-root:nth-child(1) > app-dashboard:nth-child(3) > section:nth-child(1) > section:nth-child(3) > div:nth-child(5) > app-card:nth-child(1) > section:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > app-input-select:nth-child(3) > div:nth-child(1) > select:nth-child(2)"));
+    public static final Target BTN_APLICAR_CP = Target.the("Dar click en botòn aplicar en pestaña Avance Construcción / Periodo")
+            .located(By.cssSelector("div[class='visible'] div[class='flex justify-center mt-1 w-full'] div:nth-child(1)"));
+    public static final Target LIS_PERIODO_CP = Target.the("Dar click en lista de periodo PQ en Avance Construciòn / Periodo")
+            .located(By.cssSelector("app-input-select[inputtitle='Periodo PQ'] select[class='outline-none bg-gray-50 border-[1.2px] text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5']"));
+    public static final Target TXT_APQ_CP= Target.the("Ingresar año PQ en Avance construcciòn / Periodo")
+            .located(By.xpath("//input[@placeholder='Ingresar Año PQ']"));
+    public static final Target LIS_MATERIAL_PCP = Target.the("Dar click en lista de material en Avance Construciòn / Periodo")
+            .located(By.cssSelector("body > app-root:nth-child(1) > app-dashboard:nth-child(3) > section:nth-child(1) > section:nth-child(3) > div:nth-child(5) > app-card:nth-child(1) > section:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > app-input-select:nth-child(4) > div:nth-child(1) > select:nth-child(2)"));
 
+    public static final Target LNK_PERMI_DISTRITO = Target.the("Click en sub-menù Avance Permiso / Distrito")
+            .located(By.xpath("//a[contains(text(), 'Gestión Permiso / Distrito')]"));
+    public static final Target LIS_PLAN_PD = Target.the("Dar click en lista de plan en Avance Permiso / Distrito")
+            .located(By.cssSelector("body > app-root:nth-child(1) > app-dashboard:nth-child(3) > section:nth-child(1) > section:nth-child(3) > div:nth-child(6) > app-card:nth-child(1) > section:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > app-input-select:nth-child(1) > div:nth-child(1) > select:nth-child(2)"));
+    public static final Target LIS_PERIODO_PD = Target.the("Dar click en lista de periodo PQ en Avance Permiso / Distrito")
+            .located(By.cssSelector("app-input-select[inputtitle='Periodo PQ'] select[class='outline-none bg-gray-50 border-[1.2px] text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5']"));
+    public static final Target TXT_APQ_PD= Target.the("Ingresar año PQ en Avance Permiso / Distrito")
+            .located(By.xpath("//input[@placeholder='Ingresar Año PQ']"));
+    public static final Target LIS_MATERIAL_PD = Target.the("Dar click en lista de material en Avance Permiso / Distrito")
+            .located(By.cssSelector("body > app-root:nth-child(1) > app-dashboard:nth-child(3) > section:nth-child(1) > section:nth-child(3) > div:nth-child(6) > app-card:nth-child(1) > section:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > app-input-select:nth-child(4) > div:nth-child(1) > select:nth-child(2)"));
+    public static final Target BTN_APLICAR_PD = Target.the("Dar click en botòn aplicar en pestaña Avance Permiso / Distrito")
+            .located(By.cssSelector("div[class='visible'] div[class='flex justify-center mt-1 w-full'] div:nth-child(1)"));
+    public static final Target LIS_PLAN_APD = Target.the("Dar click en lista de plan anual en Avance Permiso / Distrito")
+            .located(By.cssSelector("body > app-root:nth-child(1) > app-dashboard:nth-child(3) > section:nth-child(1) > section:nth-child(3) > div:nth-child(6) > app-card:nth-child(1) > section:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > app-input-select:nth-child(1) > div:nth-child(1) > select:nth-child(2)"));
+    public static final Target LIS_PA_PD = Target.the("Dar click en lista de PA en Permiso / Distrito")
+            .located(By.cssSelector("app-input-select[inputtitle='PA'] select[class='outline-none bg-gray-50 border-[1.2px] text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5']"));
+    public static final Target LIS_MATERIAL_APD = Target.the("Dar click en lista de material en  Permiso / Distrito")
+            .located(By.cssSelector("body > app-root:nth-child(1) > app-dashboard:nth-child(3) > section:nth-child(1) > section:nth-child(3) > div:nth-child(6) > app-card:nth-child(1) > section:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > app-input-select:nth-child(3) > div:nth-child(1) > select:nth-child(2)"));
 
 }

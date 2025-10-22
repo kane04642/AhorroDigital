@@ -100,4 +100,47 @@ public class DashboardSteps {
                 Datos_AnualHAP.diligenciar(datosAnualHAP)
         );
     }
+
+    @Y("el usuario selecciona pestaña Construcciòn - Periodo")
+    public void elUsuarioSeleccionaPestanaConstruccionPeriodo() {
+        theActorInTheSpotlight().wasAbleTo(
+                Pestana_ConstruPeriodo.click()
+        );
+    }
+
+    @Cuando("el usuario ingresa datos de consulta plan anual Construcciòn - Periodo")
+    public void elUsuarioIngresaDatosDeConsultaPlanAnualConstruccionPeriodo(Map<String, String> datosAnualCP) {
+        theActorInTheSpotlight().wasAbleTo(
+                DatosAnualCP.ingresar(datosAnualCP)
+        );
+
+    }
+
+    @Cuando("el usuario ingresa datos de consulta plan quinquenal Construcciòn - Periodo")
+    public void elUsuarioIngresaDatosDeConsultaPlanQuinquenalConstruccionPeriodo(Map<String, String> datosQuinqueCP) {
+        theActorInTheSpotlight().wasAbleTo(
+                DatosQuinqueCP.ingresar(datosQuinqueCP)
+        );
+    }
+
+    @Y("el usuario selecciona pestaña Permiso - Distrito")
+    public void elUsuarioSeleccionaPestanaPermisoDistrito() {
+        theActorInTheSpotlight().wasAbleTo(
+                Pestana_PermiDistrito.click()
+        );
+    }
+
+    @Cuando("el usuario ingresa datos de consulta plan quinquenal permiso - Distrito")
+    public void elUsuarioIngresaDatosDeConsultaPlanQuinquenalPermisoDistrito(Map<String, String> datosQuinquePD) {
+        theActorInTheSpotlight().wasAbleTo(
+                DatosQuinquePD.ingresar(datosQuinquePD)
+        );
+    }
+
+    @Cuando("el usuario ingresa datos de consulta plan anual Permiso - Distrito")
+    public void elUsuarioIngresaDatosDeConsultaPlanAnualPermisoDistrito(Map<String, String> datosAnualPD) {
+        theActorInTheSpotlight().wasAbleTo(
+                DatosAnualPD.ingresar(datosAnualPD)
+        );
+    }
 }
