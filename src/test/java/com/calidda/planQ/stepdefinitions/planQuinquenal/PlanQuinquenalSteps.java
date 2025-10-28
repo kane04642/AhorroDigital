@@ -162,4 +162,11 @@ public class PlanQuinquenalSteps {
                 Pestana_PAnual.click()
         );
     }
+
+    @Cuando("ingreso los datos del nuevo plan anual")
+    public void ingresoLosDatosDelNuevoPlanAnual(Map<String, String> datosNuevoPlanA) {
+        theActorInTheSpotlight().wasAbleTo(
+                NuevoPlanAnual.crear(datosNuevoPlanA)
+        );
+    }
 }

@@ -51,4 +51,6 @@ public class PlanQuinquenalPOM extends PageObject {
             .located(By.xpath("//p[normalize-space()='Limpiar']"));
     public static final Target LNK_PES_PANUAL= Target.the("Pestaña plan anual")
             .located(By.xpath("//a[normalize-space()='Plan Anual']"));
+    public static final Target TXT_AN_PA= Target.the("Ingresar año PA")
+            .located(By.xpath("//input[@placeholder='Ingresar el Año PA']"));
 }
