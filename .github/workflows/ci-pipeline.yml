@@ -33,26 +33,35 @@ jobs:
         run: ./gradlew clean test jacocoTestReport aggregate -Denvironment=qa
 
       - name: Generar Reportes Serenity (siempre)
+        if: always()
         run: ./gradlew aggregate -Denvironment=qa
 
       - name: Publicar Reporte de Cobertura JaCoCo
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: jacoco-coverage-report
           path: build/reports/jacoco/test/html/
+          if-no-files-found: warn
 
       - name: Publicar Reporte Serenity
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: serenity-report
           path: target/site/serenity/
+          if-no-files-found: error
 
       - name: Publicar Reporte JaCoCo XML
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: jacoco-xml-report
           path: build/reports/jacoco/test/jacocoTestReport.xml
+          if-no-files-found: warn
 
       - name: Fail if tests failed
         if: steps.test-execution.outcome == 'failure'
-        run: exit 1
+        run: |
+          echo "❌ Algunas pruebas fallaron - Revisa los reportes en los artifacts"
+          exit 1
