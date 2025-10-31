@@ -8,7 +8,6 @@ import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import java.util.Map;
 
 import static com.calidda.planQ.userinterface.menus.MenusPOM.*;
-import static com.calidda.planQ.userinterface.menus.MenusPOM.BTN_APLICAR_HAP;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class DatosAnualCP implements Task {
