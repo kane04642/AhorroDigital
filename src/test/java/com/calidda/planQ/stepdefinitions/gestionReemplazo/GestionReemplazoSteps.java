@@ -45,4 +45,18 @@ public class GestionReemplazoSteps {
                 BusquedaMasFiltros.ingresar(datosMasFiltros)
         );
     }
+
+    @Cuando("Doy click en bolsa de reemplazo")
+    public void doyClickEnBolsaDeReemplazo() {
+        theActorInTheSpotlight().wasAbleTo(
+                PestanaBolsaReem.click()
+        );
+    }
+
+    @Cuando("ingreso datos de busqueda bolsa de reemplazo")
+    public void ingresoDatosDeBusquedaBolsaDeReemplazo(Map<String, String> datosBolsaReem) {
+        theActorInTheSpotlight().wasAbleTo(
+                DatosBolsaReem.ingresar(datosBolsaReem)
+        );
+    }
 }

@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        tags = "@Login",
+        tags = "@TC648",
         features = "src/test/resources/features",
         glue = "com.calidda.planQ"
 )

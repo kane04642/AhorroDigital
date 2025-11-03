@@ -1,4 +1,5 @@
 name: CI Pipeline - Plan Quinquenal
+
 on:
   push:
     branches: [ main ]
@@ -23,20 +24,24 @@ jobs:
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
+        shell: bash
 
-      - name: Limpiar Reportes
+      - name: Limpiar reportes previos
         run: ./gradlew clearReports
+        shell: bash
 
-      - name: Ejecutar Escenarios de Prueba
+      - name: Ejecutar escenarios de prueba
         id: test-execution
         continue-on-error: true
         run: ./gradlew clean test jacocoTestReport aggregate -Denvironment=qa
+        shell: bash
 
-      - name: Generar Reportes Serenity (siempre)
+      - name: Generar reportes Serenity (siempre)
         if: always()
         run: ./gradlew aggregate -Denvironment=qa
+        shell: bash
 
-      - name: Publicar Reporte de Cobertura JaCoCo
+      - name: Publicar reporte de cobertura JaCoCo
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -44,7 +49,7 @@ jobs:
           path: build/reports/jacoco/test/html/
           if-no-files-found: warn
 
-      - name: Publicar Reporte Serenity
+      - name: Publicar reporte Serenity
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -52,7 +57,7 @@ jobs:
           path: target/site/serenity/
           if-no-files-found: error
 
-      - name: Publicar Reporte JaCoCo XML
+      - name: Publicar reporte JaCoCo XML
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -60,12 +65,14 @@ jobs:
           path: build/reports/jacoco/test/jacocoTestReport.xml
           if-no-files-found: warn
 
-      - name: Mostrar estado de pruebas (sin fallar el pipeline)
+      - name: Mostrar estado final del pipeline
         if: always()
+        shell: bash
         run: |
-          if ("${{ steps.test-execution.outcome }}" == "failure") {
-            Write-Host "⚠️ Algunas pruebas fallaron - Revisa los reportes en los artifacts"
-            Write-Host "✅ Reportes de Serenity publicados exitosamente"
-          } else {
-            Write-Host "✅ Todas las pruebas pasaron correctamente"
-          }
+          if [ "${{ steps.test-execution.outcome }}" == "failure" ]; then
+            echo "⚠️ Algunas pruebas fallaron - revisa los reportes publicados en los artifacts."
+            echo "✅ Reportes de Serenity y JaCoCo generados correctamente."
+          else
+            echo "✅ Todas las pruebas pasaron correctamente."
+            echo "📊 Puedes consultar los reportes en los artifacts del pipeline."
+          fi

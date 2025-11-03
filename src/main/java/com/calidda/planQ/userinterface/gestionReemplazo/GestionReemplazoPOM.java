@@ -69,8 +69,16 @@ public class GestionReemplazoPOM extends PageObject {
             .located(By.cssSelector("input[placeholder='Buscar Responsables']"));
     public static final Target BTN_APLICAR_FILTROS= Target.the("Botòn aplicar")
             .located(By.cssSelector("div[class='w-24 ml-2'] p[class='col-span-3 text-white']"));
-
-
+    public static final Target LNK_BOLSA_REEM= Target.the("Click en pestaña lista de bolsa de reemplazo")
+            .located(By.xpath("//a[normalize-space()='Bolsa de reemplazo']"));
+    public static final Target TXT_COD_ANTEPRO= Target.the("Ingresar còdigo de anteproyecto")
+            .located(By.xpath("//input[@placeholder='Ingrese el código']"));
+    public static final Target LST_DISTRITO= Target.the("Seleccionar distrito")
+            .located(By.cssSelector("body > app-root:nth-child(1) > app-gestion-reemplazo:nth-child(3) > section:nth-child(1) > section:nth-child(3) > div:nth-child(1) > div:nth-child(3) > app-card:nth-child(1) > section:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > app-input-select:nth-child(2) > div:nth-child(1) > select:nth-child(2)"));
+    public static final Target LST_CONSTRUCTOR_BR= Target.the("Seleccionar distrito")
+            .located(By.cssSelector("app-input-select[inputtitle='Constructor'] select[class='outline-none bg-gray-50 border-[1.2px] text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5']"));
+    public static final Target TXT_LONG_BOL_REEM = Target.the("Ingresar long de reemplazo")
+            .located(By.cssSelector("input[placeholder='Ingrese la Long. de Reemplazo']"));
 
 
 }
