@@ -1,4 +1,4 @@
-package com.calidda.planQ.interactions;
+package com.bcs.simulador.interactions;
 
 import net.serenitybdd.model.time.InternalSystemClock;
 import net.serenitybdd.screenplay.Actor;

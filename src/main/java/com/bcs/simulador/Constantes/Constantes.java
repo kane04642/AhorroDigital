@@ -1,4 +1,4 @@
-package com.calidda.planQ.Constantes;
+package com.bcs.simulador.Constantes;
 
 public class Constantes {
     private Constantes(){}

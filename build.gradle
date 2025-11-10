@@ -49,6 +49,7 @@ dependencies {
     implementation "net.serenity-bdd:serenity-core:${serenityVersion}"
     implementation "net.serenity-bdd:serenity-screenplay:${serenityVersion}"
     implementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityVersion}"
+    implementation("com.sparkjava:spark-core:2.9.2")
     implementation "net.serenity-bdd:serenity-cucumber:${serenityVersion}"
     implementation "net.serenity-bdd:serenity-junit5:${serenityVersion}"
     implementation group: 'net.serenity-bdd', name: 'serenity-ensure', version: '4.1.20'

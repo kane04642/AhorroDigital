@@ -1,4 +1,4 @@
-package com.calidda.planQ.runners;
+package com.bcs.simulador.runners;
 
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
@@ -6,9 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        tags = "@TC648",
+        tags = "@regresion ",
         features = "src/test/resources/features",
-        glue = "com.calidda.planQ"
+        glue = "com.bcs.simulador"
 )
 
 public class LoginRunner {

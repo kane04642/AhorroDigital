@@ -4,6 +4,7 @@
 - [Git](https://git-scm.com/downloads)
 
 Para trabajar sobre el proyecto, se debe clonar el repositorio mediante el siguiente comando y trabajar sobre la rama
+git clone 
 ***master***:
 ```console
 ```
