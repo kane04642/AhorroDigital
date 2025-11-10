@@ -4,26 +4,15 @@
 - [Git](https://git-scm.com/downloads)
 
 Para trabajar sobre el proyecto, se debe clonar el repositorio mediante el siguiente comando y trabajar sobre la rama
-git clone 
+git clone https://github.com/kane04642/AhorroDigital.git
 ***master***:
 ```console
 ```
 
-## Estructura del Proyecto
-```text
-.
-│# Paquete que almacena todos las clases y archivos involucrados en el manejo y procesamiento de los datos de prueba
-├── src
-│	├── main
-│	│	└── java
-│	│		└── com.grupoemi
-│	│			│
-│	│			# Paquete que almacena las interacciones que se realizan por cada tarea
-│	│			├── interactions
-│	│			│	│
-│	│			│	# Paquete que almacena las clases java encargadas de interactuar con el menu
-│	│			│	├── 
-│	│			│	│
-│	└── ···
-└── ···
-```
+## Forma de ejecutar el proyecto
+    ## Limpiar reportes
+        .\gradlew clean
+    ## Ejecutar feature por nombre de feature
+        .\gradlew test --tests com.bcs.simulador.runners.LoginRunner
+    ## Generar reporte de serenity BDD
+        .\gradlew aggregate  // se valida en la carpeta target/site/serenity/index.html
